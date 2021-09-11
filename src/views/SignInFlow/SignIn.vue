@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import * as netlifyIdentityWidget from "netlify-identity-widget";
 import RequestAccount from "../../components/RequestAccount.vue";
 import ThemeSwtich from "../../components/ThemeSwitch.vue";
 
@@ -52,6 +53,9 @@ export default {
     toggleDarkMode() {
       this.$store.commit("toggleDarkMode");
     },
+  },
+  mounted() {
+    netlifyIdentityWidget.open();
   },
 };
 </script>
